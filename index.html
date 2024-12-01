@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trading Community</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1f1c2c, #928dab);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        .container {
+            text-align: center;
+            padding: 30px;
+            max-width: 500px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+            animation: fadeIn 1.5s ease;
+        }
+        img {
+            width: 80px;
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            animation: slideDown 1s ease;
+        }
+        p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            color: #ccc;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #444;
+            border-radius: 5px;
+            background-color: #2a2a2a;
+            color: #fff;
+            font-size: 1em;
+        }
+        input[type="text"]::placeholder {
+            color: #aaa;
+        }
+        .access-btn {
+            background-color: #007bff;
+            color: #fff;
+            padding: 12px 25px;
+            font-size: 1em;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .access-btn:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+        .features {
+            margin-top: 40px;
+        }
+        .features div {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .features i {
+            font-size: 1.5em;
+            margin-right: 10px;
+            color: #007bff;
+        }
+        footer {
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #aaa;
+        }
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideDown {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="black.png" alt="Trading Community Logo">
+        <h1>Trading Community</h1>
+        <p>Join our exclusive community for live trading, analysis, and discussions with professionals.</p>
+        <form id="discord-form">
+            <input type="text" id="discord-name" name="discord-name" placeholder="Enter your Discord name" required>
+            <button class="access-btn" type="submit">Submit</button>
+        </form>
+        <button class="access-btn" onclick="location.href='https://discord.gg/ZjjCec4R'">
+            <i class="fab fa-discord"></i> Join Discord
+        </button>
+        <div class="features">
+            <div><i class="fas fa-chart-line"></i> Real-time market analysis</div>
+            <div><i class="fas fa-users"></i> Community-driven insights</div>
+            <div><i class="fas fa-lock"></i> Exclusive discussions</div>
+        </div>
+    </div>
+    <footer>
+        <p>© <span id="year"></span> Trading Community. All Rights Reserved. | <a href="https://discord.gg/ZjjCec4R">Contact Us</a></p>
+    </footer>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+        const form = document.getElementById('discord-form');
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const discordName = document.getElementById('discord-name').value;
+            if (discordName) {
+                alert(`Discord name submitted: ${discordName}`);
+                // Here you can send the data to your server
+                console.log(`Discord name: ${discordName}`);
+            } else {
+                alert('Please enter your Discord name.');
+            }
+        });
+    </script>
+</body>
+</html>
